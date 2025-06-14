@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   <script src="https://unpkg.com/scrollreveal"></script>
-<style>
+  <style>
     :root {
       --primary: #2c6b2f;
       --primary-light: #4caf50;
@@ -28,7 +28,7 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tnwDe2I8Tegm5uarVQ8AKXlKyZ5_I4IWtw&usqp=CAU');
+      background: url('https://s14.gifyu.com/images/bxyKT.webp') center/cover no-repeat fixed;
       color: var(--light);
       overflow-x: hidden;
       line-height: 1.6;
@@ -38,7 +38,7 @@
       content: '';
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
-background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tnwDe2I8Tegm5uarVQ8AKXlKyZ5_I4IWtw&usqp=CAU');
+      background: linear-gradient(135deg, rgba(44,107,47,0.85), rgba(12,14,30,0.9));
       z-index: -1;
     }
 
@@ -225,6 +225,66 @@ background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tnwDe2I
       font-family: 'Montserrat', sans-serif;
       font-size: 22px;
       margin-bottom: 15px;
+    }
+
+    /* Pentagon Services Grid */
+    .pentagon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 50px auto;
+      max-width: 1000px;
+    }
+
+    .pentagon-container {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin: 0 10px;
+    }
+
+    .pentagon {
+      width: 100%;
+      height: 100%;
+      background: var(--primary);
+      position: relative;
+      clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .pentagon-content {
+      padding: 20px;
+      color: white;
+      font-weight: 600;
+      transform: translateY(-10px);
+    }
+
+    .pentagon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .dark-green {
+      background-color: #1b5e20;
+    }
+
+    .medium-green {
+      background-color: #2e7d32;
+    }
+
+    .light-green {
+      background-color: #4caf50;
+    }
+
+    .lighter-green {
+      background-color: #81c784;
+      color: var(--dark);
     }
 
     /* Team Slider */
@@ -457,6 +517,13 @@ background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tnwDe2I
     }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      .pentagon-container {
+        width: 180px;
+        height: 180px;
+      }
+    }
+
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 48px;
@@ -474,6 +541,15 @@ background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tnwDe2I
         display: none;
       }
 
+      .pentagon-container {
+        width: 150px;
+        height: 150px;
+      }
+
+      .pentagon-content {
+        font-size: 14px;
+      }
+
       .swiper {
         padding: 30px 0;
       }
@@ -484,88 +560,27 @@ background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tnwDe2I
       }
     }
 
-    body {
-      font-family: 'Arial', sans-serif;
-      background: #fff;
-      margin: 0;
-      padding: 40px 20px;
-      color: #fff;
-    }
-
-    h1 {
-      text-align: center;
-      color: #1b5e20;
-      font-weight: 700;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-    }
-
-    .hex-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 20px;
-      justify-items: center;
-    }
-
-    .hex {
-      position: relative;
-      width: 180px;
-      height: 156px; /* height = width * sqrt(3)/2 */
-      background: #4caf50;
-      clip-path: polygon(
-        25% 0%, 75% 0%, 
-        100% 50%, 75% 100%, 
-        25% 100%, 0% 50%
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-      font-weight: 700;
-      font-size: 1.1rem;
-      cursor: default;
-      transition: background 0.3s ease;
-    }
-
-    /* Different shades of green for variety */
-    .hex.dark-green {
-      background: #1b5e20;
-    }
-    .hex.medium-green {
-      background: #388e3c;
-    }
-    .hex.light-green {
-      background: #81c784;
-      color: #1b5e20;
-    }
-    .hex.lighter-green {
-      background: #c8e6c9;
-      color: #1b5e20;
-    }
-
-    /* Smaller text for subtitles */
-    .hex small {
-      display: block;
-      font-weight: 400;
-      font-size: 0.8rem;
-      margin-top: 8px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-      .hex {
+    @media (max-width: 480px) {
+      .pentagon-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .pentagon-container {
         width: 140px;
-        height: 121px;
-        font-size: 1rem;
-        padding: 15px;
+        height: 140px;
+      }
+      
+      .hero h1 {
+        font-size: 36px;
+      }
+      
+      .section-title {
+        font-size: 28px;
       }
     }
-</style>
-
+  </style>
 </head>
-<body> 
+<body>
   <!-- Modern Navbar -->
   <nav>
     <a href="#" class="nav-logo">DC<span>AGENCY</span></a>
@@ -590,45 +605,75 @@ background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6tnwDe2I
     <section id="about">
       <h2 class="section-title">About Us</h2>
       <div class="section-content">
-Founded last February 10, 2023. DC
-Agency is a company that prioritizes
-client needs by learning about their
-business’ particular demands and
-providing individualised services. By
-consistently exceeding clients'
-expectations, DC Agency has built a
-stellar name in the field.
+        Founded last February 10, 2023. DC Agency is a company that prioritizes client needs by learning about their business' particular demands and providing individualised services. By consistently exceeding clients' expectations, DC Agency has built a stellar name in the field.
       </div>
     </section>
 
     <!-- Services Section -->
-<div class="hex-grid">
-  <div class="hex dark-green">
-    Data Mining<br>and Data Cleaning
-  </div>
-  <div class="hex light-green">
-    Scrubbing Properties
-    
-  </div>
-  <div class="hex medium-green">
-    Comping Land Properties
-  </div>
-  <div class="hex lighter-green">
-    Cold Calling<br>and Admin Work
-  </div>
-  <div class="hex dark-green">
-    Google Sheet and Excel File Assistance
-  </div>
-  <div class="hex medium-green">
-    Texting and Appointment Setting
-  </div>
-  <div class="hex lighter-green">
-    Customer Service or Phone Support
-  </div>
-  <div class="hex light-green">
-    Property Management
-  </div>
-</div>
+    <section id="services">
+      <h2 class="section-title">Our Services</h2>
+      <div class="section-content">
+        We offer comprehensive business solutions tailored to your specific needs.
+      </div>
+      
+      <div class="pentagon-grid">
+        <!-- Service 1 -->
+        <div class="pentagon-container">
+          <div class="pentagon dark-green">
+            <div class="pentagon-content">Data Mining<br>and Data Cleaning</div>
+          </div>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="pentagon-container">
+          <div class="pentagon light-green">
+            <div class="pentagon-content">Scrubbing Properties</div>
+          </div>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="pentagon-container">
+          <div class="pentagon medium-green">
+            <div class="pentagon-content">Comping Land Properties</div>
+          </div>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="pentagon-container">
+          <div class="pentagon lighter-green">
+            <div class="pentagon-content">Cold Calling<br>and Admin Work</div>
+          </div>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="pentagon-container">
+          <div class="pentagon dark-green">
+            <div class="pentagon-content">Google Sheet and Excel File Assistance</div>
+          </div>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="pentagon-container">
+          <div class="pentagon medium-green">
+            <div class="pentagon-content">Texting and Appointment Setting</div>
+          </div>
+        </div>
+        
+        <!-- Service 7 -->
+        <div class="pentagon-container">
+          <div class="pentagon lighter-green">
+            <div class="pentagon-content">Customer Service or Phone Support</div>
+          </div>
+        </div>
+        
+        <!-- Service 8 -->
+        <div class="pentagon-container">
+          <div class="pentagon light-green">
+            <div class="pentagon-content">Property Management</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Team Section with Slider -->
     <section id="team" class="team-section">
@@ -726,28 +771,25 @@ stellar name in the field.
     <section id="reviews">
       <h2 class="section-title">Client Testimonials</h2>
       <div class="card-grid">
-      <div class="review">
-        <div class="author">
-          
-          <strong style="color:white;">Meir Shemtov</strong> <span style="font-weight:normal; font-size:12px; margin-left:auto;">today 10:35</span>
+        <div class="review">
+          <div class="author">
+            <strong style="color:green;">Meir Shemtov</strong> <span style="font-weight:normal; font-size:12px; margin-left:auto;">10:35</span>
+          </div>
+          <p>I've worked with Chantel, and she's brought top talent to our team. Highly recommend!</p>
         </div>
-        <p>I've worked with Chantel, and she's brought top talent to our team. Highly recommend!</p>
-      </div>
-      <div class="review">
-        <div class="author">
-         
-<strong style="color:white;">Imee ✨ </strong><span style="font-weight:normal; font-size:12px; margin-left:auto;">Today at 10:31 PM</span>
+        <div class="review">
+          <div class="author">
+            <strong style="color:green;">Imee ✨ </strong><span style="font-weight:normal; font-size:12px; margin-left:auto;">Today at 10:31 PM</span>
+          </div>
+          <p>Working with the Chantel Team has been a real pleasure. They show an exceptional level of dedication and reliability. They are easy to work with, adapt quickly to any situation, and promptly address concerns! Their commitment to excellence is clear in every aspect of their work, making them an excellent choice for anyone looking for top-tier services.</p>
         </div>
-        <p>Working with the Chantel Team has been a real pleasure. They show an exceptional level of dedication and reliability. They are easy to work with, adapt quickly to any situation, and promptly address concerns! Their commitment to excellence is clear in every aspect of their work, making them an excellent choice for anyone looking for top-tier services.</p>
-      </div>
-      <div class="review">
-        <div class="author">
-<strong style="color:white;">MikeB</strong>
-           <span style="font-weight:normal; font-size:12px; margin-left:auto;">Today at 10:38 PM</span>
+        <div class="review">
+          <div class="author">
+            <strong style="color:green;">MikeB</strong>
+            <span style="font-weight:normal; font-size:12px; margin-left:auto;">Today at 10:38 PM</span>
+          </div>
+          <p>Chantel Team has been remarkable. They consistently provide high-quality services and are incredibly responsive. Any issues that arise are swiftly addressed, and their ability to adapt to changing guidelines is truly impressive. Their professionalism and dedication have greatly supported our business and other investors as well.</p>
         </div>
-        <p>Chantel Team has been remarkable. They consistently provide high-quality services and are incredibly responsive. Any issues that arise are swiftly addressed, and their ability to adapt to changing guidelines is truly impressive. Their professionalism and dedication have greatly supported our business and other investors as well.</p>
-      </div>
-        <!-- Add more reviews -->
       </div>
     </section>
 
@@ -773,7 +815,18 @@ stellar name in the field.
   </div>
 
   <!-- Footer -->
-  
+  <footer>
+    <div class="footer-logo">DC<span>AGENCY</span></div>
+    <div class="social-links">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="copyright">
+      &copy; 2023 DC Agency. All Rights Reserved.
+    </div>
+  </footer>
 
   <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -810,7 +863,7 @@ stellar name in the field.
       reset: false
     });
 
-    ScrollReveal().reveal('.card, .swiper-slide, .review', {
+    ScrollReveal().reveal('.card, .swiper-slide, .review, .pentagon-container', {
       delay: 200,
       distance: '30px',
       origin: 'bottom',
@@ -831,4 +884,3 @@ stellar name in the field.
   </script>
 </body>
 </html>
-  
